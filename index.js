@@ -31,30 +31,27 @@ window.addEventListener("scroll", () => {
 scrollIndicator.querySelectorAll("li").forEach((item, i) => {
     item.addEventListener("click" , () => {
         resetScrollIndicator();
-        window.scrollTo({
-            top: i * windowHeight + 30,
-            behavior: 'smooth'
-        })
+        sections[i].scrollIntoView({
+            behavior: "smooth"
+        });
     });
 });
 
 navButtons.querySelectorAll("li").forEach((item, i) => {
     item.addEventListener("click" , () => {
         resetScrollIndicator();
-        window.scrollTo({
-            top: i*windowHeight + 30,
-            behavior: 'smooth'
-        })    
+        sections[i].scrollIntoView({
+            behavior: "smooth"
+        });  
     })
 });
 
 dropdownBtns.querySelectorAll("li").forEach((item, i) => {
     item.addEventListener("click" , () => {
         resetScrollIndicator();
-        window.scrollTo({
-            top: i * windowHeight + 30,
-            behavior: 'smooth'
-        })
+        sections[i].scrollIntoView({
+            behavior: "smooth"
+        });
     });
 });
 
@@ -70,19 +67,22 @@ contactBtns.forEach((btn) => {
 
 //enable hidden nav bar
 const nav = document.querySelector(".nav");
+let width = window.innerWidth;
 let lastScrollY = window.scrollY;
 
 window.addEventListener("scroll" , () => {
-    if (lastScrollY < window.scrollY){
-        nav.classList.add("hidden");
-        dropdownMenu.classList.remove("open");
-        const isOpen = dropdownMenu.classList.contains("open");
-        toggleBtnIcon.classList = isOpen ? "fa-solid fa-xmark fa-3x" : "fa-solid fa-bars fa-3x";
-    } else {
-        nav.classList.remove("hidden");
-    }
-
+    if(width > 1000){
+        console.log(width)
+        if (lastScrollY < window.scrollY){
+            nav.classList.add("hidden");
+            dropdownMenu.classList.remove("open");
+            const isOpen = dropdownMenu.classList.contains("open");
+            toggleBtnIcon.classList = isOpen ? "fa-solid fa-xmark fa-3x" : "fa-solid fa-bars fa-3x";
+        } else {
+            nav.classList.remove("hidden");
+        }
     lastScrollY = window.scrollY;
+    }
 });
 
 //enable dropdown on navbar (mobile)
