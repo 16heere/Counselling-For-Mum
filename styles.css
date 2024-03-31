@@ -768,6 +768,8 @@ footer{
 
     .contact-form button{
         width: 10rem;
+        border: 1px solid #000;
+        color: #000;
     }
 
     .sector{
