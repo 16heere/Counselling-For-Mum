@@ -9,6 +9,10 @@
     font-size: 16px;
 }
 
+button{
+    font-family: inherit;
+}
+
 .mobile-hero{
     display: none;
     padding: 150px;
