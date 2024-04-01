@@ -86,7 +86,6 @@ window.addEventListener("scroll" , () => {
 });
 
 //enable dropdown on navbar (mobile)
-
 const toggleBtn = document.querySelector(".toggle-btn");
 const toggleBtnIcon = document.querySelector(".toggle-btn i");
 const dropdownMenu = document.querySelector(".dropdown-menu");
@@ -96,31 +95,3 @@ toggleBtnIcon.onclick = function () {
     const isOpen = dropdownMenu.classList.contains("open");
     toggleBtnIcon.classList = isOpen ? "fa-solid fa-xmark fa-3x" : "fa-solid fa-bars fa-3x";
 }
-
-/* CONTACT FORM */
-function sendEmail() {
-    emailjs.init("Eshar"); // Initialize EmailJS with your user ID
-    
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting
-    
-    // Get form data
-    var formData = {
-        fname: document.getElementById('fName').value,
-        lname: document.getElementById('lname').value,
-        email: document.getElementById('email').value,
-        telephone: document.getElementById('telephone').value
-    };
-
-    // Send email
-    emailjs.send("service_pi9uvc4", "template_wrurd02", formData)
-        .then(function(response) {
-            console.log('Email sent successfully:', response);
-            alert('Your message has been sent!');
-          document.getElementById('contact-form').reset(); // Reset the form
-        }, function(error) {
-            console.error('Email sending failed:', error);
-            alert('Oops! Something went wrong.');
-        });
-    });
-};
