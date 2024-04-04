@@ -86,7 +86,6 @@ window.addEventListener("scroll" , () => {
 });
 
 //enable dropdown on navbar (mobile)
-
 const toggleBtn = document.querySelector(".toggle-btn");
 const toggleBtnIcon = document.querySelector(".toggle-btn i");
 const dropdownMenu = document.querySelector(".dropdown-menu");
