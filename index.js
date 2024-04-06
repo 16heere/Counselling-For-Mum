@@ -95,3 +95,5 @@ toggleBtnIcon.onclick = function () {
     const isOpen = dropdownMenu.classList.contains("open");
     toggleBtnIcon.classList = isOpen ? "fa-solid fa-xmark fa-3x" : "fa-solid fa-bars fa-3x";
 }
+
+// Store User Details in Database
