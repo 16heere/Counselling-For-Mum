@@ -71,19 +71,17 @@ let width = window.innerWidth;
 let lastScrollY = window.scrollY;
 
 window.addEventListener("scroll" , () => {
-    if(width > 1000){
-        console.log(width)
-        if (lastScrollY < window.scrollY){
-            nav.classList.add("hidden");
-            dropdownMenu.classList.remove("open");
-            const isOpen = dropdownMenu.classList.contains("open");
-            toggleBtnIcon.classList = isOpen ? "fa-solid fa-xmark fa-3x" : "fa-solid fa-bars fa-3x";
-        } else {
-            nav.classList.remove("hidden");
-        }
+    if (lastScrollY < window.scrollY){
+        nav.classList.add("hidden");
+        dropdownMenu.classList.remove("open");
+        const isOpen = dropdownMenu.classList.contains("open");
+        toggleBtnIcon.classList = isOpen ? "fa-solid fa-xmark fa-3x" : "fa-solid fa-bars fa-3x";
+    } else {
+        nav.classList.remove("hidden");
+    }
     lastScrollY = window.scrollY;
     }
-});
+);
 
 //enable dropdown on navbar (mobile)
 const toggleBtn = document.querySelector(".toggle-btn");
