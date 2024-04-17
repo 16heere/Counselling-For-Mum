@@ -619,6 +619,14 @@ footer{
     right: 0;
 }
 
+.grey{
+    color: grey;
+}
+
+.grey svg{
+    border: 5px solid grey;
+}
+
 @media (max-width: 1400px) {
     *{
         font-size: 16px;
